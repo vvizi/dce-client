@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
-function App() {
+axios.defaults.withCredentials = true;
+
+const App: React.FC = () => {
+  const getMessage = async() => {
+    axios.get("http://localhost:8000/").then((response) => {
+      console.log(response.data);
+    }).catch((error) => {
+      alert(error);
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      hello
+      <button type='button' onClick={getMessage}>click</button>
     </div>
-  );
+  )
 }
 
 export default App;
