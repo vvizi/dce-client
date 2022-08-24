@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
+
+import LoginComponent from './LoginComponent';
 
 axios.defaults.withCredentials = true;
 
-const App: React.FC = () => {
+const MainComponent: React.FC = () => {
   const getMessage = async() => {
     axios.get("http://localhost:8000/").then((response) => {
       console.log(response.data);
@@ -17,8 +18,9 @@ const App: React.FC = () => {
     <div>
       hello
       <button type='button' onClick={getMessage}>click</button>
+      <LoginComponent />
     </div>
   )
 }
 
-export default App;
+export default MainComponent;
