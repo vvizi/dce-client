@@ -26,7 +26,7 @@ const LoginComponent = (): JSX.Element => {
     return (
         <div className="login">
             <div className="login-left">
-                <Theme width="692px" height="620px" />
+                <Theme width="100%" height="70%" />
                 <p className="login-left-label">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br /> tempor incididunt ut
                     labore et dolore magna aliqua. Ut enim ad minim

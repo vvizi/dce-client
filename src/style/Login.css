@@ -23,22 +23,22 @@
 .login-right{
   background-color: #f8f8f8;
   flex: 1;
-  padding-top: 7%;
+  padding-top: 10%;
 }
 
 .login-title {
   color: #222222;
   font-weight: bold;
-  font-size: 38px;
-  width: 300px;
+  font-size: 40px;
+  width: 400px;
   margin: 0 auto;
 }
 
 .login-form{
   display: flex;
   flex-direction: column;
-  width: 300px;
-  margin: 20px auto 0;
+  width: 400px;
+  margin: 30px auto 0;
 }
 
 .login-input {
@@ -46,7 +46,7 @@
   height: 48px;
   font-size: 20px;
   padding-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   background-color: #E1E4E5;
   border: none;
   border-radius: 7px;
@@ -68,7 +68,7 @@
 }
 
 .radio-form > label:not(:first-child) {
-  margin-left: 25px;
+  margin-left: 70px;
 }
 
 #item {
@@ -94,7 +94,7 @@ input[type='radio']:checked {
 }
 
 .login-btn{
-  width: 200px;
+  width: 400px;
   height: 52px;
   border-radius: 50px;
   border-style: none;
