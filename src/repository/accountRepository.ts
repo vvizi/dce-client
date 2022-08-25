@@ -1,19 +1,23 @@
-import { getAllByPlaceholderText } from '@testing-library/react';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
+const axiosConfig: AxiosRequestConfig = {
+    baseURL: 'http://localhost:8000/'
+}
 
 export interface accountDTO{
-    userId: string;
-    userPassword: string;
+    inputId: string;
+    inputPassword: string;
 }
 
 export const getAccountInfo = async(dto: accountDTO) => {
+    const url = "http://localhost:8000/"
 
-    try {
-        const data = await axios.get("http://localhost:8000/", {params: dto});
-        console.log(data.data);
-        return data;
-    } catch {
-        console.log('잘못됨');
-    }
+    await axios.post(url, dto)
+        .then((data) => {
+            console.log(data.data);
+            return data.data;
+        }
+        ).catch((error) => {
+            console.log(error)
+        })
 }

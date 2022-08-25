@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { accountDTO, getAccountInfo } from '../repository/accountRepository';
 import { ReactComponent as Theme } from '../assets/theme.svg';
 
 import '../style/Login.css';
 
-const RadioMap = ['Google', 'Naver', 'Daum'];
+const RadioType = ['Google', 'Naver', 'Daum'] as const;
+
+type socialType = typeof RadioType[number];
+
+const RadioMap : Record<socialType , string> = {
+    Google: 'gmail.com',
+    Naver: 'naver.com',
+    Daum: 'hanmail.net'
+}
 
 const LoginComponent = (): JSX.Element => {
     const [inputId, setInputId] = useState<string>('');
     const [inputPw, setInputPw] = useState<string>('');
-    const [checkRadio, setCheckRadio] = useState<string>('Google');
+    const [checkRadio, setCheckRadio] = useState<socialType>('Google');
 
     const handleInputId = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputId(e.target.value);
@@ -19,9 +28,17 @@ const LoginComponent = (): JSX.Element => {
         setInputPw(e.target.value);
     };
 
-    const handleRadioBtnClick = (item: string) => {
+    const handleRadioBtnClick = (item: socialType) => {
         setCheckRadio(item);
     };
+
+    const handleClickStartBtn = async() => {
+        const accountDTO: accountDTO = {
+            inputId: `${inputId}@${RadioMap[checkRadio]}`,
+            inputPassword: inputPw
+        }
+        await getAccountInfo(accountDTO)
+    }
 
     return (
         <div className="login">
@@ -47,12 +64,11 @@ const LoginComponent = (): JSX.Element => {
                     />
                 </form>
                 <form action="" className="radio-form">
-                    {RadioMap.map(item => (
-                        <label>
+                    {RadioType.map(item => (
+                        <label key={item}>
                             <input
                                 type="radio"
                                 id="item"
-                                key={item}
                                 value={item}
                                 checked={checkRadio === item}
                                 onClick={() => handleRadioBtnClick(item)}
@@ -64,6 +80,7 @@ const LoginComponent = (): JSX.Element => {
                 <button
                     type="button"
                     className={classNames({ 'login-btn': true, 'login-btn--active': inputId && inputPw })}
+                    onClick={handleClickStartBtn}
                 >
                     <p>START</p>
                 </button>
