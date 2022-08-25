@@ -7,10 +7,10 @@ export interface accountDTO{
     userPassword: string;
 }
 
-export const getAccountInfo = async() => {
+export const getAccountInfo = async(dto: accountDTO) => {
 
     try {
-        const data = await axios.get("http://localhost:8000/test", {params: { id: 123, pw: 123 }});
+        const data = await axios.get("http://localhost:8000/test", {params: dto});
         console.log(data.data);
         return data;
     } catch {
