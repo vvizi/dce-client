@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/dce-client/static/css/main.ea71d227.css",
-    "main.js": "/dce-client/static/js/main.a652489c.js",
+    "main.css": "/dce-client/static/css/main.452ceb57.css",
+    "main.js": "/dce-client/static/js/main.669d82a3.js",
     "static/media/theme.svg": "/dce-client/static/media/theme.308d8c6684bd3d9908888eb5fa6a0d7d.svg",
     "index.html": "/dce-client/index.html",
-    "main.ea71d227.css.map": "/dce-client/static/css/main.ea71d227.css.map",
-    "main.a652489c.js.map": "/dce-client/static/js/main.a652489c.js.map"
+    "main.452ceb57.css.map": "/dce-client/static/css/main.452ceb57.css.map",
+    "main.669d82a3.js.map": "/dce-client/static/js/main.669d82a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea71d227.css",
-    "static/js/main.a652489c.js"
+    "static/css/main.452ceb57.css",
+    "static/js/main.669d82a3.js"
   ]
 }
