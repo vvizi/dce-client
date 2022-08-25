@@ -10,7 +10,7 @@ export interface accountDTO{
 export const getAccountInfo = async(dto: accountDTO) => {
 
     try {
-        const data = await axios.get("http://localhost:8000/test", {params: dto});
+        const data = await axios.get("http://localhost:8000/", {params: dto});
         console.log(data.data);
         return data;
     } catch {
