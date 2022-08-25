@@ -1,7 +1,112 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .login{
+  height: 100vh;
   display: flex;
 }
 
+.login-left{
+  flex: 1;
+}
+
+.login-left-label{
+  position: absolute;
+  top: 510px;
+  left: 100px;
+  align-content: center;
+}
+
 .login-right{
+  background-color: #f8f8f8;
+  flex: 1;
+  padding-top: 7%;
+}
+
+.login-title {
+  color: #222222;
+  font-weight: bold;
+  font-size: 38px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px auto 0;
+}
+
+.login-input {
+  outline: none;
+  height: 48px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-bottom: 20px;
   background-color: #E1E4E5;
+  border: none;
+  border-radius: 7px;
+}
+
+.login-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #37AF8E;
+}
+
+.radio-form {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.radio-form > label {
+  font-size: 20px;
+  color: #222;
+}
+
+.radio-form > label:not(:first-child) {
+  margin-left: 25px;
+}
+
+#item {
+  margin-right: 8px;
+}
+
+input[type='radio'],
+input[type='radio']:checked {
+  vertical-align: middle;
+  appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height:20px;
+  border-radius: 100%;
+}
+
+input[type='radio'] {
+  background-color: #D9D9D9;
+  border: 3px solid #D9D9D9;
+}
+input[type='radio']:checked {
+  background-color: #37AF8E;
+}
+
+.login-btn{
+  width: 200px;
+  height: 52px;
+  border-radius: 50px;
+  border-style: none;
+  background-color: #666666;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 80px auto 0;
+  display: block;
+}
+
+.login-btn--active{
+  background-color: #37AF8E;
+  cursor: pointer;
 }
