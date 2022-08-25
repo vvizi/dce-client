@@ -1,18 +1,13 @@
 import React from 'react';
-import axios from 'axios';
+import { getAccountInfo } from './repository/accountRepository';
 import './App.css';
 
-axios.defaults.withCredentials = true;
+//axios.defaults.withCredentials = true;
 
 const App: React.FC = () => {
   const getMessage = async() => {
-    axios.get("http://localhost:8000/").then((response) => {
-      console.log(response.data);
-    }).catch((error) => {
-      alert(error);
-    });
+    getAccountInfo();
   }
-
   return (
     <div>
       hello
