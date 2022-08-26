@@ -4,7 +4,7 @@ import AppStore from './AppStore';
 /**
  * 최상위 store
  */
- class RootStore {
+class RootStore {
     appStore: AppStore;
 
     constructor() {

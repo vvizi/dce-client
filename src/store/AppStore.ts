@@ -1,18 +1,17 @@
-import { action, makeObservable, observable } from 'mobx'
+import { action, makeObservable, observable } from 'mobx';
 
 class AppStore {
-  isLogin: boolean = false
+    isLogin: boolean = false;
 
-  constructor() {
-    makeObservable(this, {
-      isLogin: observable,
-    })
-  }
+    constructor() {
+        makeObservable(this, {
+            isLogin: observable,
+        });
+    }
 
-  setIsLogin(): boolean {
-    return this.isLogin = true;
-  }
-
+    setIsLogin(): void {
+        this.isLogin = true;
+    }
 }
 
-export default AppStore
+export default AppStore;
