@@ -8,11 +8,9 @@ import './index.css';
 
 const store = new RootStore();
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <StoreProvider value={store}>
-    <MainComponent />
-  </StoreProvider>
+    <StoreProvider value={store}>
+        <MainComponent />
+    </StoreProvider>
 );
