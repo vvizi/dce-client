@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import useStore from '../store/useStore';
 import classNames from 'classnames';
 import { accountDTO, getAccountInfo } from '../repository/accountRepository';
 import { ReactComponent as Theme } from '../assets/theme.svg';
@@ -16,6 +18,7 @@ const RadioMap : Record<socialType , string> = {
 }
 
 const LoginComponent = (): JSX.Element => {
+    const { appStore } = useStore();
     const [inputId, setInputId] = useState<string>('');
     const [inputPw, setInputPw] = useState<string>('');
     const [checkRadio, setCheckRadio] = useState<socialType>('Google');
@@ -33,6 +36,7 @@ const LoginComponent = (): JSX.Element => {
     };
 
     const handleClickStartBtn = async() => {
+        appStore.setIsLogin();
         const accountDTO: accountDTO = {
             inputId: `${inputId}@${RadioMap[checkRadio]}`,
             inputPassword: inputPw
@@ -47,7 +51,7 @@ const LoginComponent = (): JSX.Element => {
             </div>
             <div className="login-right">
                 <p className="login-title">Welcome</p>
-                <form action="" className="login-form">
+                <form className="login-form">
                     <input
                         type="text"
                         className="login-input"
@@ -63,7 +67,7 @@ const LoginComponent = (): JSX.Element => {
                         onChange={handleInputPw}
                     />
                 </form>
-                <form action="" className="radio-form">
+                <form className="radio-form">
                     {RadioType.map(item => (
                         <label key={item}>
                             <input
@@ -89,4 +93,4 @@ const LoginComponent = (): JSX.Element => {
     );
 };
 
-export default LoginComponent;
+export default observer(LoginComponent);
