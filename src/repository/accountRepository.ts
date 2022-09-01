@@ -7,6 +7,7 @@ const axiosConfig: AxiosRequestConfig = {
 export interface accountDTO{
     inputId: string;
     inputPassword: string;
+    socialId: string;
 }
 
 export const getAccountInfo = async(dto: accountDTO) => {

@@ -39,7 +39,8 @@ const LoginComponent = (): JSX.Element => {
         appStore.setIsLogin();
         const accountDTO: accountDTO = {
             inputId: `${inputId}@${RadioMap[checkRadio]}`,
-            inputPassword: inputPw
+            inputPassword: inputPw,
+            socialId: checkRadio.toUpperCase()
         }
         await getAccountInfo(accountDTO)
     }
