@@ -1,7 +1,8 @@
 import React from 'react';
+import WordCloudComponent from './WordCloudComponent';
 
 const DashboardComponent = (): JSX.Element => {
-    return <div>hi</div>;
+    return <WordCloudComponent />;
 };
 
 export default DashboardComponent;
