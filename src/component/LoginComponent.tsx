@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import useStore from '../store/useStore';
 import classNames from 'classnames';
-import { accountDTO, getAccountInfo } from '../repository/accountRepository';
+import { accountDTO, getAccountInfo, resultDTO } from '../repository/accountRepository';
 import { ReactComponent as Theme } from '../assets/theme.svg';
 
 import '../style/Login.css';
@@ -44,8 +44,17 @@ const LoginComponent = (): JSX.Element => {
             inputPassword: inputPw,
             socialId: checkRadio.toUpperCase()
         }
-        await getAccountInfo(accountDTO)
+        const resultData: resultDTO = await getAccountInfo(accountDTO);
+
+        setReultData(resultData);
     }
+
+    const setReultData = (resultData: resultDTO) => {
+        // sender, ratio, topic, delete
+        appStore.setSenderDataList(resultData.ratio);
+        appStore.setRatioDataList(resultData.ratio);
+        appStore.setTopicDataList(resultData.topic);
+    }   
 
     return (
         <div className="login">
