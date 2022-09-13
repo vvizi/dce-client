@@ -1,8 +1,8 @@
-import React from 'react';
+import TitleComponent from './TitleComponent';
 import WordCloudComponent from './WordCloudComponent';
 
 const DashboardComponent = (): JSX.Element => {
-    return <WordCloudComponent />;
+    return (<><TitleComponent/><WordCloudComponent /></>);
 };
 
 export default DashboardComponent;

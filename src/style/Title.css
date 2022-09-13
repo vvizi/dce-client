@@ -1,0 +1,20 @@
+.title-container {
+  height: 50px;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #E1E4E5;
+  font-size: 24px;
+  line-height: 50px;
+} 
+
+.title-img{
+  margin-right: 8px;
+}
+
+.title {
+  display: flex;
+  font-weight: bold;
+  margin-right: 2px;
+  font-size: 25px;
+  margin-left: 20px;
+}

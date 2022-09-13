@@ -22,6 +22,7 @@ const LoginComponent = (): JSX.Element => {
     const [inputId, setInputId] = useState<string>('');
     const [inputPw, setInputPw] = useState<string>('');
     const [checkRadio, setCheckRadio] = useState<socialType>('Google');
+    const userEmail = `${inputId}@${RadioMap[checkRadio]}`
 
     const handleInputId = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputId(e.target.value);
@@ -37,8 +38,9 @@ const LoginComponent = (): JSX.Element => {
 
     const handleClickStartBtn = async() => {
         appStore.setIsLogin();
+        appStore.setUserEmail(userEmail);
         const accountDTO: accountDTO = {
-            inputId: `${inputId}@${RadioMap[checkRadio]}`,
+            inputId: userEmail,
             inputPassword: inputPw,
             socialId: checkRadio.toUpperCase()
         }
