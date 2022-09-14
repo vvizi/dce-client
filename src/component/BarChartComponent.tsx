@@ -11,6 +11,7 @@ import { Bar } from 'react-chartjs-2';
 import { ChartOptions } from 'chart.js';
 import { observer } from 'mobx-react-lite';
 import useStore from '../store/useStore';
+import { graphData } from '../store/AppStore';
 import '../style/BarChart.css';
 
 ChartJS.register(
@@ -24,9 +25,13 @@ ChartJS.register(
 
 const BarChartComponent = (): JSX.Element => {
   const { appStore } = useStore();
-  const labels = ['January', 'February', 'March', 'April', 'd'];
-  const dataSet = [];
+  
+  const senderData = appStore.senderDataList;
+  const labels: Array<string> = [];
+  const dataSet: Array<number> = [];
 
+  senderData.map((d: graphData) => (dataSet.push(d.count), labels.push(d.name)));
+  
   const options = {
     responsive: true,
     plugins: {
@@ -36,7 +41,7 @@ const BarChartComponent = (): JSX.Element => {
       title: {
         display: true,
         text: '받은 메일 TOP 5',
-      },
+      }
     },
   };
 
@@ -45,7 +50,7 @@ const BarChartComponent = (): JSX.Element => {
     datasets: [
       {
         label: '받은 메일',
-        data: [1,2,3,4,5],
+        data: dataSet,
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
