@@ -16,6 +16,7 @@
 .theme-label {
   text-align: center;
   color: #666666;
+  font-size: 20px;
   margin-top: -140px;
 
   -ms-user-select: none; 

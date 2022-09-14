@@ -54,10 +54,14 @@ const PieChartComponent = (): JSX.Element => {
     }
 
     return (
-        <div className="pie-chart">
-            <div className="pie-title">비율</div>
-            <ReactApexChart options={pieData.options} series={pieData.series} type="pie" width="400" />
-            <div className="pie-label">읽은 메일 대비 안 읽은 메일 비율: {percentage}%</div>
+        <div className="pie-container">
+            <div className='pie-title-container'>
+                <p className="pie-title">비율</p>
+                <p className="pie-label">읽은 메일 대비 안 읽은 메일 비율: {percentage}%</p>
+            </div>
+            <div className='pie-chart'>
+                <ReactApexChart options={pieData.options} series={pieData.series} type="pie" width="400" />
+            </div>
             {resultLabel}
         </div>
     );

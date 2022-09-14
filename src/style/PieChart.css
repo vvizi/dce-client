@@ -1,9 +1,14 @@
-.pie-chart {
-  width: fit-content;
+.pie-container {
+  width: 40%;
+  min-width: 550px;
   height: fit-content;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+.pie-title-container{
+  display: flex;
 }
 
 .pie-title{
@@ -16,10 +21,17 @@
   font-size: 18px;
   color: #222222;
   font-weight: 500;
-  margin-top: 10px;
+  margin: auto 10px;
+}
+
+.pie-chart{
+  margin: auto;
+  width: fit-content;
 }
 
 .result-label{
   font-size: 22px;
   font-weight: bold;
+  margin: auto;
+  width: fit-content;
 }
