@@ -7,7 +7,7 @@ import LoginComponent from './LoginComponent';
 const MainComponent: React.FC = () => {
     const { appStore } = useStore();
 
-    return <div>{appStore.isLogin ? <DashboardComponent /> : <LoginComponent />}</div>;
+    return <>{appStore.isLogin ? <DashboardComponent /> : <LoginComponent />}</>;
 };
 
 export default observer(MainComponent);

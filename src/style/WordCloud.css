@@ -1,16 +1,29 @@
 .wordcloud-total-box {
-    width: 500px;
-    border-radius: 5px;
-    background-color: #ffffff;
+  width: 58%;
+  min-width: 800px;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 .wordcloud-title {
-    font-size: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222222;
 }
 
 .wordCloudBox {
-    height: 250px;
-    width: 500px;
-    border-radius: 10px;
-    margin: auto;
+  height: 250px;
+  width: 500px;
+  border-radius: 10px;
+  margin: auto;
 }
+
+.wordcloud-label{
+    font-size: 18px;
+    color: #222222;
+    font-weight: 500;
+    margin-top: 10px;
+  }

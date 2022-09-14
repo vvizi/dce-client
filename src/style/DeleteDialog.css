@@ -1,25 +1,84 @@
 .delete-container {
     position: relative;
-    width: 500px;
-    height: 250px;
+    width: 58%;
+    min-width: 800px;
+    height: 325px;
+    min-height: 325px;
     background-color: #37AF8E;
     color: #ffffff;
     border-radius: 5px;
 }
 
+.delete-title{
+    display: flex;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px 20px;
+}
+
 .delete-img {
     position: absolute;
-    top: 25%;
+    top: 13%;
     left: 50%;
+}
+
+.dialog-button--close{
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-left: auto;
+}
+
+.dialog-button--close:hover{
+    cursor: pointer;
+    background-color: #EEEEEE;
 }
 
 .dialog-button {
     position: absolute;
-    top: 75%;
+    top: 78%;
     left: 3%;
     background-color: transparent;
     outline: none;
+    font-size: 20px;
     padding: 10px;
     border: 1px solid #ffffff;
     color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dialog-button:hover {
+    background-color: #ffffff;
+    color: #37AF8E;
+}
+
+.delete-description{
+    padding: 28px;
+    font-size: 24px;
+}
+
+.delete-description > p {
+    margin-bottom: 3px;
+}
+
+.delete-description > p > span{
+    font-weight: bold;
+}
+
+.delete-data-text{
+    color: #37AF8E;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.delete-data{
+    margin-bottom: 5px;
 }

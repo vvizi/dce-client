@@ -23,8 +23,8 @@ const WordCloudComponent = (): JSX.Element => {
 
     return (
       <div className="wordcloud-total-box">
-        <div className="wordcloud-title">topic</div>
-        <div>그래프 설명</div>
+        <div className="wordcloud-title">Word Cloud</div>
+        <div className="wordcloud-label">당신의 메일함 주요 키워드입니다.</div>
         <div className="wordCloudBox">
             <ReactWordcloud
               options={options} 

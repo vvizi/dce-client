@@ -11,9 +11,9 @@ const DashboardComponent = (): JSX.Element => {
         <>
             <TitleComponent/>
             <div className="graph-container">
-                <BarChartComponent />
+                <PieChartComponent/>
                 <DeleteDialogComponent />
-                <PieChartComponent />
+                <BarChartComponent />
                 <WordCloudComponent />
             </div>
         </>
