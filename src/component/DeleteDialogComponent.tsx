@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import useStore from "../store/useStore";
+import { ReactComponent as DeleteIcon } from '../assets/mail.svg';
 import { deleteData } from '../store/AppStore';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -13,7 +14,7 @@ const DeleteDialogComponent = (): JSX.Element => {
     const [open, setOpen] = useState<boolean>(false);
     const { appStore } = useStore();
     const deleteData = appStore.deleteDataList;
-
+    const email = appStore.getUserEmail();
     const handleOpenDialog = () => {
         setOpen(true);
     }
@@ -34,7 +35,18 @@ const DeleteDialogComponent = (): JSX.Element => {
                     </div>
                 </DialogContent>
             </Dialog>
-            <button className="dialog-button" onClick={handleOpenDialog}>삭제 추천 메일 보기</button>
+            <div className="delete-img">
+                <DeleteIcon />
+            </div>
+            <div>
+                <p>{email}님 아래와 같은 메일은 지우세요</p>
+                <p>디지털 탄소 배출 절감에 도움이 됩니다.</p>
+            </div>
+            <div> 
+                <button className="dialog-button" onClick={handleOpenDialog}>
+                삭제 추천 메일 보기
+            </button>
+            </div>
         </div>
     )
 }
