@@ -14,7 +14,7 @@ class AppStore {
     isLogin: boolean = false;
     senderDataList: Array<graphData> = [];
     ratioDataList: Array<graphData> = [];
-    topicDataList: Array<topicData> = [];
+    topicDataList: Array<topicData> = [{text: "Loading...", value: 100}];
     deleteDataList: string[] = [];
 
     userEmail: string = '';

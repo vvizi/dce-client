@@ -14,10 +14,10 @@ const WordCloudComponent = (): JSX.Element => {
       fontFamily: "Lora",
       fontStyles: "normal",
       fontWeight: "700",
-      fontSizes: [10, 50],
+      fontSizes: [10, 50] as [number, number],
       padding: 1,
       rotations: 1,
-      rotationAngles: [0, 90]
+      rotationAngles: [0, 90] as [number, number]
     };
     
 
