@@ -10,10 +10,8 @@ const msg={
             {"name": "받은 메일 Top 5","count":100}]
     ,
     "ratio":  [
-            //{"name": "전체 메일 개수","count":500},
             {"name": "읽은 메일 개수","count":100},
             {"name": "안 읽은 메일 개수","count":400},
-            //{"name": "전체 읽은 메일 대비 안 읽은 메일","count":80.00}
         ]
     ,
     "topic":  [
