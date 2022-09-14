@@ -64,8 +64,8 @@ export interface resultDTO {
 }
 
 export const getAccountInfo = async(dto: accountDTO) => {
-    //const url = "http://localhost:8000/"
-    const url = "http://3.38.123.103";
+    const url = "http://localhost:8000/"
+    // const url = "http://3.38.123.103";
     const resultMsg: resultDTO = await axios.post(url, dto)
         .then((data) => {
             //return data.data;
