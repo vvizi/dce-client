@@ -22,11 +22,15 @@ const WordCloudComponent = (): JSX.Element => {
     
 
     return (
-      <div className="wordCloudBox">
-          <ReactWordcloud
-            options={options} 
-            words={words}
-          />
+      <div className="wordcloud-total-box">
+        <div className="wordcloud-title">topic</div>
+        <div>그래프 설명</div>
+        <div className="wordCloudBox">
+            <ReactWordcloud
+              options={options} 
+              words={words}
+            />
+        </div>
       </div>
     );
 }

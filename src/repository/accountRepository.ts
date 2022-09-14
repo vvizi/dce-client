@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { graphData, topicData } from '../store/AppStore';
+import { graphData, topicData, deleteData } from '../store/AppStore';
 
 const msg={
     "sender": [
@@ -31,10 +31,18 @@ const msg={
             {"text": "english 4","value":20},
             {"text": "english 5","value":10}]
     ,
-    "delete":["응암정보도서관<ealibsend@ealib.or.kr>","홍익정보도서관<moneyletter@uppity.co.kr>",
-    "강남정보도서관<kr_hotel@trip.com>","석계정보도서관<ealibsend@ealib.or.kr>","태릉정보도서관<moneyletter@uppity.co.kr>",
-    "인천정보도서관<kr_hotel@trip.com>","광운정보도서관<ealibsend@ealib.or.kr>","고려정보도서관<moneyletter@uppity.co.kr>",
-    "노원정보도서관<kr_hotel@trip.com>","월계정보도서관<ealibsend@ealib.or.kr>"]
+    "delete":[
+        {"name":"응암정보도서관", "address": "ealibsend@ealib.or.kr"},
+        {"name":"홍익정보도서관", "address":"moneyletter@uppity.co.kr"},
+        {"name":"강남정보도서관", "address":"kr_hotel@trip.com"},
+        {"name":"석계정보도서관", "address":"ealibsend@ealib.or.kr"},
+        {"name":"태릉정보도서관", "address":"moneyletter@uppity.co.kr"},
+        {"name":"인천정보도서관", "address":"kr_hotel@trip.com"},
+        {"name":"광운정보도서관", "address":"ealibsend@ealib.or.kr"},
+        {"name":"고려정보도서관", "address":"moneyletter@uppity.co.kr"},
+        {"name":"노원정보도서관", "address":"kr_hotel@trip.com"},
+        {"name":"월계정보도서관", "address":"ealibsend@ealib.or.kr"}
+    ]
 }
 
 
@@ -52,7 +60,7 @@ export interface resultDTO {
     sender: Array<graphData>;
     ratio: Array<graphData>;
     topic: Array<topicData>;
-    delete: Array<string>;
+    delete: Array<deleteData>;
 }
 
 export const getAccountInfo = async(dto: accountDTO) => {

@@ -54,6 +54,7 @@ const LoginComponent = (): JSX.Element => {
         appStore.setSenderDataList(resultData.sender);
         appStore.setRatioDataList(resultData.ratio);
         appStore.setTopicDataList(resultData.topic);
+        appStore.setDeleteDataList(resultData.delete);
     }
 
     return (

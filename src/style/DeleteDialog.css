@@ -1,0 +1,19 @@
+.delete-container {
+    position: relative;
+    width: 500px;
+    height: 250px;
+    background-color: #37AF8E;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.dialog-button {
+    position: absolute;
+    top: 75%;
+    left: 3%;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}

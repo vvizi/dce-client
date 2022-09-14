@@ -10,12 +10,17 @@ export interface topicData {
     value: number;
 }
 
+export interface deleteData {
+    name: string;
+    address: string;
+}
+
 class AppStore {
     isLogin: boolean = false;
     senderDataList: Array<graphData> = [];
     ratioDataList: Array<graphData> = [];
     topicDataList: Array<topicData> = [{text: "Loading...", value: 100}];
-    deleteDataList: string[] = [];
+    deleteDataList: Array<deleteData> = [{name: "Loading", address: "Loading..."}];
 
     userEmail: string = '';
 
@@ -30,7 +35,8 @@ class AppStore {
             setIsLogin: action,
             setSenderDataList: action,
             setRatioDataList: action,
-            setTopicDataList: action
+            setTopicDataList: action,
+            setDeleteDataList: action
         });
     }
 
@@ -55,6 +61,10 @@ class AppStore {
 
     setTopicDataList(topicDataList: Array<topicData>): void {
         this.topicDataList = topicDataList;
+    }
+    
+    setDeleteDataList(deleteDataList: Array<deleteData>): void {
+        this.deleteDataList = deleteDataList;
     }
 }
 
