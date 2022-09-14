@@ -4,7 +4,7 @@ import useStore from '../store/useStore';
 import classNames from 'classnames';
 import { accountDTO, getAccountInfo, resultDTO } from '../repository/accountRepository';
 import { ReactComponent as Theme } from '../assets/theme.svg';
-
+import CautionTooltipComponent from './CautionTooltipComponent';
 import '../style/Login.css';
 
 const RadioType = ['Google', 'Naver', 'Daum'] as const;
@@ -51,18 +51,22 @@ const LoginComponent = (): JSX.Element => {
 
     const setReultData = (resultData: resultDTO) => {
         // sender, ratio, topic, delete
-        appStore.setSenderDataList(resultData.ratio);
+        appStore.setSenderDataList(resultData.sender);
         appStore.setRatioDataList(resultData.ratio);
         appStore.setTopicDataList(resultData.topic);
-    }   
+    }
 
     return (
         <div className="login">
             <div className="login-left">
-                <Theme width="100%" height="90%" />
+                <Theme width="100%" height="80%" />
+                <div className="theme-label">디지털 탄소 배출을 줄이기 위해 우리 모두 동참해요.</div>
             </div>
             <div className="login-right">
-                <p className="login-title">Welcome</p>
+                <p className="login-title">
+                    Welcome
+                    <CautionTooltipComponent />
+                </p>
                 <form className="login-form">
                     <input
                         type="text"
