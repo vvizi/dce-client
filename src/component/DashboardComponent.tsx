@@ -1,8 +1,9 @@
 import TitleComponent from './TitleComponent';
+import PieChartComponent from './PieChartComponent';
 import WordCloudComponent from './WordCloudComponent';
 
 const DashboardComponent = (): JSX.Element => {
-    return (<><TitleComponent/><WordCloudComponent /></>);
+    return (<><TitleComponent/><PieChartComponent/><WordCloudComponent /></>);
 };
 
 export default DashboardComponent;
