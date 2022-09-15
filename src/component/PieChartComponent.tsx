@@ -56,7 +56,7 @@ const PieChartComponent = (): JSX.Element => {
     return (
         <div className="pie-container">
             <div className='pie-title-container'>
-                <p className="pie-title">비율</p>
+                <p className="pie-title">Pie Chart</p>
                 <p className="pie-label">읽은 메일 대비 안 읽은 메일 비율: {percentage}%</p>
             </div>
             <div className='pie-chart'>
